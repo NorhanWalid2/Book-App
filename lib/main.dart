@@ -13,6 +13,7 @@ class BookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Color.fromARGB(255, 100, 31, 18)),
       home: SplashScreen(),
     );
   }

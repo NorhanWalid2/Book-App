@@ -1,3 +1,4 @@
+import 'package:book_app/core/utils/asset.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenBody extends StatelessWidget {
@@ -5,6 +6,15 @@ class SplashScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Image.asset(
+          AssetData.logo,
+        ),
+        
+      ],
+    );
   }
 }
