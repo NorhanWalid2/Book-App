@@ -12,8 +12,8 @@ class BooksListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
+          return const Padding(
+            padding: EdgeInsets.only(top: 16.0, right: 10),
             child: CustomListViewItem(),
           );
         },
