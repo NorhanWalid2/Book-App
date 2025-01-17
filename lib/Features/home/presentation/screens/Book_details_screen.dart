@@ -1,3 +1,4 @@
+import 'package:book_app/Features/home/presentation/screens/widgets/book_details_Screen_body.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsScreen extends StatelessWidget {
@@ -5,6 +6,6 @@ class BookDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(body: SafeArea(child: BookDetailsScreenBody()));
   }
 }
