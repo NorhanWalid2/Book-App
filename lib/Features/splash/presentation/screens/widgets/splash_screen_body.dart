@@ -1,10 +1,10 @@
-import 'package:book_app/Features/home/presentation/screens/home_screen.dart';
 import 'package:book_app/Features/splash/presentation/screens/widgets/fading_logo.dart';
 import 'package:book_app/Features/splash/presentation/screens/widgets/sliding_text.dart';
+import 'package:book_app/core/utils/app_router.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
+import 'package:go_router/go_router.dart';
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({super.key});
@@ -28,6 +28,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   @override
   void dispose() {
+    super.dispose();
     // TODO: implement dispose
 
     controller.dispose();
@@ -62,9 +63,10 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 4), () {
-      Get.to(() => const HomeScreen(),
-          transition: Transition.leftToRight,
-          duration: const Duration(microseconds: 250));
+      // Get.to(() => const HomeScreen(),
+      //     transition: Transition.leftToRight,
+      //     duration: const Duration(microseconds: 250));
+      GoRouter.of(context).push(AppRouter.kHomeScreen);
     });
   }
 }
