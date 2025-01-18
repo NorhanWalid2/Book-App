@@ -8,9 +8,10 @@ class BookRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Icon(
+          size: 18,
           FontAwesomeIcons.solidStar,
           color: Color.fromARGB(255, 247, 235, 119),
         ),
@@ -26,7 +27,7 @@ class BookRating extends StatelessWidget {
         ),
         Text(
           '(2022)',
-          style: Styles.textstyle16
+          style: Styles.textstyle14
               .copyWith(color: Color.fromARGB(255, 195, 187, 187)),
         )
       ],
