@@ -1,8 +1,8 @@
 import 'package:book_app/Features/home/presentation/screens/widgets/book_actions.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/book_rating.dart';
-import 'package:book_app/Features/home/presentation/screens/widgets/books_list_view.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/custom_book_details_appbar.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/custom_book_item.dart';
+import 'package:book_app/Features/home/presentation/screens/widgets/similar_book_list_view.dart';
 import 'package:book_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -50,11 +50,20 @@ class BookDetailsScreenBody extends StatelessWidget {
             height: 25,
           ),
           BookActions(),
-          Text(
-            'You Can Also Like',
-            style: Styles.textstyle18,
+          const SizedBox(
+            height: 40,
           ),
-          BooksListView(size: 0.2,)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You Can Also Like',
+              style: Styles.textstyle14.copyWith(fontWeight: FontWeight.bold),
+            ),
+          ),
+          const SizedBox(
+            height: 3,
+          ),
+          SimilarBookListView(),
         ],
       ),
     );
