@@ -1,4 +1,6 @@
+import 'package:book_app/Features/home/presentation/screens/widgets/book_actions.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/book_rating.dart';
+import 'package:book_app/Features/home/presentation/screens/widgets/books_list_view.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/custom_book_details_appbar.dart';
 import 'package:book_app/Features/home/presentation/screens/widgets/custom_book_item.dart';
 import 'package:book_app/core/utils/styles.dart';
@@ -24,7 +26,8 @@ class BookDetailsScreenBody extends StatelessWidget {
           ),
           Text(
             'The Jungle Book',
-            style: Styles.textstyle30.copyWith(fontWeight: FontWeight.bold),
+            style: Styles.textstyle30.copyWith(
+                fontWeight: FontWeight.bold, color: Color(0xff493628)),
           ),
           const SizedBox(
             height: 6,
@@ -32,7 +35,9 @@ class BookDetailsScreenBody extends StatelessWidget {
           Text(
             'Nopav walid',
             style: Styles.textstyle18.copyWith(
-                fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                color: Color(0xff493628)),
           ),
           const SizedBox(
             height: 18,
@@ -41,7 +46,15 @@ class BookDetailsScreenBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: width * 0.32),
             child: const BookRating(),
           ),
-          
+          const SizedBox(
+            height: 25,
+          ),
+          BookActions(),
+          Text(
+            'You Can Also Like',
+            style: Styles.textstyle18,
+          ),
+          BooksListView(size: 0.2,)
         ],
       ),
     );

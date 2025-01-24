@@ -1,4 +1,4 @@
 import 'dart:ui';
 
-const kPrimaryColor = Color.fromARGB(255, 100, 31, 18);
+const kPrimaryColor = Color(0xffD6C0B3);
 const kGtSectraFine = 'GT Sectra Fine';

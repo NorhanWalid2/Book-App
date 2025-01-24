@@ -15,9 +15,9 @@ class SlidingText extends StatelessWidget {
         builder: (context, _) {
           return SlideTransition(
             position: slideAnimation,
-            child:const Text(
+            child: const Text(
               "Feel Free",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Color(0xff493628), fontSize: 20),
               textAlign: TextAlign.center,
             ),
           );

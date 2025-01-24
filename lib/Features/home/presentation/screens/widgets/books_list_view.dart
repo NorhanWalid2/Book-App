@@ -2,12 +2,12 @@ import 'package:book_app/Features/home/presentation/screens/widgets/custom_book_
 import 'package:flutter/material.dart';
 
 class BooksListView extends StatelessWidget {
-  const BooksListView({super.key});
-
+   BooksListView({super.key, required this.size});
+  double size;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.3,
+      height: MediaQuery.of(context).size.height * size,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
