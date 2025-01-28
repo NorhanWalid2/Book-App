@@ -9,7 +9,7 @@ class CustomButton extends StatelessWidget {
       required this.topLeft,
       required this.topRight,
       required this.backgroundColor,
-      this.colorTextButton, 
+      this.colorTextButton,
       required this.textButton});
   double topLeft;
   double topRight;

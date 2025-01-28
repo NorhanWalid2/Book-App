@@ -46,7 +46,7 @@ class CustomTextField extends StatelessWidget {
           //labelText: labeltextt,
           suffixIcon: icon,
           hintText: hint,
-        
+
           //labelStyle: TextStyle(color: Colors.black),
           hintStyle: TextStyle(color: Color.fromARGB(255, 122, 121, 121)),
         ),

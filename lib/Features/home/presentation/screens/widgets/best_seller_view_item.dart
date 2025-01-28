@@ -18,18 +18,17 @@ class BestSellerViewItem extends StatelessWidget {
         padding: EdgeInsets.all(10),
         height: 140,
         decoration: BoxDecoration(
-         
-        color: Color(0xffD6C0B3),
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: const Color.fromARGB(255, 116, 113, 113).withOpacity(0.2),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: Offset(0, 3),
-          ),
-        ], ), 
-
+          color: Color(0xffD6C0B3),
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: const Color.fromARGB(255, 116, 113, 113).withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
         child: Row(
           children: [
             AspectRatio(
