@@ -3,6 +3,7 @@ import 'package:book_app/Features/home/data/repos/home_repos.dart';
 import 'package:book_app/core/errors/failures.dart';
 import 'package:book_app/core/utils/api_services.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImp implements HomeRepo {
   final ApiServices apiServices;
@@ -15,11 +16,15 @@ class HomeRepoImp implements HomeRepo {
           endpoint: 'volumes?q=programming&orderBy=newest');
       List<BookModel> Books = [];
       for (var item in data['item']) {
-        Books.add(item);
+        Books.add(BookModel.fromJson(item));
       }
       return right(Books);
     } catch (e) {
-      return left(ServiceFailure());
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 
