@@ -13,7 +13,7 @@ class HomeRepoImp implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBook() async {
     try {
       var data = await apiServices.get(
-          endpoint: 'volumes?q=programming&orderBy=newest');
+          endpoint: 'volumes?q=programming&orderBy=newest&filter=free-ebooks');
       List<BookModel> Books = [];
       for (var item in data['item']) {
         Books.add(BookModel.fromJson(item));
@@ -29,8 +29,21 @@ class HomeRepoImp implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeatureBook() {
-    // TODO: implement fetchFeatureBook
-    throw UnimplementedError();
+  Future<Either<Failure, List<BookModel>>> fetchFeatureBook() async {
+    try {
+      var data = await apiServices.get(
+          endpoint: 'volumes?q=programming&filter=free-ebooks');
+      List<BookModel> Books = [];
+      for (var item in data['item']) {
+        Books.add(BookModel.fromJson(item));
+      }
+      return right(Books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
   }
 }
