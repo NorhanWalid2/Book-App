@@ -48,7 +48,7 @@ class BookDetailsScreenBody extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.32),
-                  child: const BookRating(),
+                  //ild: const BookRating(),
                 ),
                 const SizedBox(
                   height: 25,
