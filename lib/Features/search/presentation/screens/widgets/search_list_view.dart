@@ -1,7 +1,7 @@
 import 'package:book_app/Features/home/presentation/manager/bestSeller_books_cubit/bset_seller_books_cubit_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/best_seller_view_item.dart';
 import 'package:book_app/core/utils/styles.dart';
-import 'package:book_app/core/widgets/custom_loading_indicator.dart';
+import 'package:book_app/core/widgets/custom_loading_indicator_Best_seller.dart';
 import 'package:book_app/core/widgets/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

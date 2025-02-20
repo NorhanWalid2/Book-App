@@ -17,7 +17,10 @@ class BestSellerViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsScreen);
+        GoRouter.of(context).push(
+          AppRouter.kBookDetailsScreen,
+          extra: bookModel, // تمرير بيانات الكتاب
+        );
       },
       child: Container(
         padding: EdgeInsets.all(10),
@@ -82,12 +85,13 @@ class BestSellerViewItem extends StatelessWidget {
                     //crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        bookModel.saleInfo!.saleability=="NOT_FOR_SALE"
-                ?"Free" : bookModel.saleInfo!.saleability!,
-                       style: Styles.textstyle20
+                        bookModel.saleInfo!.saleability == "NOT_FOR_SALE"
+                            ? "Free"
+                            : '50\$',
+                        style: Styles.textstyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      BookRating(count:bookModel.volumeInfo.pageCount!),
+                      BookRating(count: bookModel.volumeInfo.pageCount!),
                     ],
                   ),
                 ],

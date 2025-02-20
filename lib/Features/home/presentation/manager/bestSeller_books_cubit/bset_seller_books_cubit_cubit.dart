@@ -11,7 +11,7 @@ class BsetSellerBooksCubitCubit extends Cubit<BsetSellerBooksCubitState> {
   final HomeRepo homeRepo;
   Future<void> FetchBestSellerBooks() async {
     emit(BsetSellerBooksCubitLoading());
-    var result = await homeRepo.fetchFeatureBook();
+    var result = await homeRepo.fetchBestSellerBook();
     result.fold((failure) {
       emit(BsetSellerBooksCubitFailure(errMessage: failure.errorMessage));
     }, (books) {

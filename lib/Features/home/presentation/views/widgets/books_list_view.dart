@@ -2,7 +2,8 @@ import 'package:book_app/Features/home/data/models/book_model/volume_info.dart';
 import 'package:book_app/Features/home/presentation/manager/featured_books_cubit/books_cubit_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:book_app/core/utils/styles.dart';
-import 'package:book_app/core/widgets/custom_loading_indicator.dart';
+import 'package:book_app/core/widgets/Custom_Shimmer_featured_books.dart';
+import 'package:book_app/core/widgets/custom_loading_indicator_Best_seller.dart';
 import 'package:book_app/core/widgets/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,7 +42,7 @@ class BooksListView extends StatelessWidget {
             style: Styles.textstyle14,
           ));
         } else {
-          return CustomLoadingIndicator();
+          return CustomShimmerFeaturedBooks();
         }
       },
     );
