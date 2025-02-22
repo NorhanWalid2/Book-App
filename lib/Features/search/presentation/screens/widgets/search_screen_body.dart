@@ -20,13 +20,13 @@ class SearchScreenBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomAppBarSearch(),
+              const  CustomAppBarSearch(),
                 CustomTextField(
                   hint: 'Search',
                   //labeltextt: 'Search',
                   obscure: false,
                   icon: GestureDetector(
-                    child: Icon(FontAwesomeIcons.magnifyingGlass,
+                    child:const Icon(FontAwesomeIcons.magnifyingGlass,
                         size: 20, color: Color(0xff493628)),
                   ),
                   onchange: (value) {
@@ -46,7 +46,7 @@ class SearchScreenBody extends StatelessWidget {
               ],
             ),
           ),
-          SliverFillRemaining(
+        const  SliverFillRemaining(
             child: SearchListView(),
           )
         ],

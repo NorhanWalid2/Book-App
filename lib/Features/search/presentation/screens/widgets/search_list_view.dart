@@ -35,7 +35,7 @@ class SearchListView extends StatelessWidget {
             style: Styles.textstyle14,
           ));
         } else {
-          return CustomLoadingIndicator();
+          return const CustomLoadingIndicator();
         }
       },
     );

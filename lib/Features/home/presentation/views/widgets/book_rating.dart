@@ -30,7 +30,7 @@ class BookRating extends StatelessWidget {
         Text(
           count.toString(),
           style: Styles.textstyle14
-              .copyWith(color: Color.fromARGB(255, 60, 43, 30)),
+              .copyWith(color:const Color.fromARGB(255, 60, 43, 30)),
         )
       ],
     );

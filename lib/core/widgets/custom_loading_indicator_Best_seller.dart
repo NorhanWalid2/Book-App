@@ -12,7 +12,7 @@ class CustomLoadingIndicator extends StatelessWidget {
         return Shimmer.fromColors(
           baseColor: Colors.grey.withOpacity(0.5),
           highlightColor: Colors.white,
-          child: shimmerBody(),
+          child: const shimmerBody(),
         );
       },
     );
@@ -40,7 +40,7 @@ class shimmerBody extends StatelessWidget {
                 width: 70,
                 height: 90,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 238, 219, 219),
+                  color: const Color.fromARGB(255, 238, 219, 219),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -56,7 +56,7 @@ class shimmerBody extends StatelessWidget {
                       width: double.infinity,
                       height: 18,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 236, 233, 233),
+                        color: const Color.fromARGB(255, 236, 233, 233),
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
@@ -90,7 +90,7 @@ class shimmerBody extends StatelessWidget {
                               child: Container(
                                 width: 12,
                                 height: 12,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   color: Colors.white,
                                   shape: BoxShape.circle,
                                 ),

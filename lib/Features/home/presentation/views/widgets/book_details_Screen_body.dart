@@ -34,7 +34,7 @@ class BookDetailsScreenBody extends StatelessWidget {
                 Text(
                   bookModel.volumeInfo.title!,
                   style: Styles.textstyle30.copyWith(
-                      fontWeight: FontWeight.bold, color: Color(0xff493628)),
+                      fontWeight: FontWeight.bold, color:const Color(0xff493628)),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(
@@ -45,7 +45,7 @@ class BookDetailsScreenBody extends StatelessWidget {
                   style: Styles.textstyle18.copyWith(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff493628)),
+                      color:const Color(0xff493628)),
                 ),
                 const SizedBox(
                   height: 18,

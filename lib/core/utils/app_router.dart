@@ -3,7 +3,7 @@ import 'package:book_app/Features/home/data/repos/home_repos.dart';
 import 'package:book_app/Features/home/presentation/manager/similar_book_cubit/similar_book_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/Book_details_screen.dart';
 import 'package:book_app/Features/home/presentation/views/home_screen.dart';
-import 'package:book_app/Features/home/presentation/views/widgets/book_details_Screen_body.dart';
+//import 'package:book_app/Features/home/presentation/views/widgets/book_details_Screen_body.dart';
 import 'package:book_app/Features/search/presentation/screens/search_screen.dart';
 import 'package:book_app/Features/splash/presentation/screens/splash_screen.dart';
 import 'package:book_app/core/utils/service_locator.dart';
@@ -18,11 +18,11 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => SplashScreen(),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         path: kHomeScreen,
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: kBookDetailsScreen,
@@ -35,7 +35,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kSearchScreen,
-        builder: (context, state) => SearchScreen(),
+        builder: (context, state) => const SearchScreen(),
       ),
     ],
   );

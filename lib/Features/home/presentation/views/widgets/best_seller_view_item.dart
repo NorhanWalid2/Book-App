@@ -23,17 +23,17 @@ class BestSellerViewItem extends StatelessWidget {
         );
       },
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding:const EdgeInsets.all(10),
         height: 160,
         decoration: BoxDecoration(
-          color: Color(0xffD6C0B3),
+          color:const Color(0xffD6C0B3),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
               color: const Color.fromARGB(255, 116, 113, 113).withOpacity(0.2),
               spreadRadius: 5,
               blurRadius: 7,
-              offset: Offset(0, 3),
+              offset:const Offset(0, 3),
             ),
           ],
         ),
@@ -52,7 +52,7 @@ class BestSellerViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+           const SizedBox(
               width: 30,
             ),
             Expanded(

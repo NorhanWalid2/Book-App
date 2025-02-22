@@ -24,7 +24,7 @@ class SimilarBookListView extends StatelessWidget {
               itemCount: state.Books.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(top: 16.0, right: 10),
+                  padding:const EdgeInsets.only(top: 16.0, right: 10),
                   child: GestureDetector(
                     onTap: () {
                       GoRouter.of(context).push(
@@ -52,7 +52,7 @@ class SimilarBookListView extends StatelessWidget {
             style: Styles.textstyle14,
           ));
         } else {
-          return CustomShimmerFeaturedBooks();
+          return  const CustomShimmerFeaturedBooks();
         }
       },
     );
