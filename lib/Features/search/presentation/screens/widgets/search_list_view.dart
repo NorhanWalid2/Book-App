@@ -1,5 +1,6 @@
 import 'package:book_app/Features/home/presentation/manager/bestSeller_books_cubit/bset_seller_books_cubit_cubit.dart';
 import 'package:book_app/Features/home/presentation/views/widgets/best_seller_view_item.dart';
+import 'package:book_app/Features/search/presentation/manager/search_cubit/search_cubit_cubit.dart';
 import 'package:book_app/core/utils/styles.dart';
 import 'package:book_app/core/widgets/custom_loading_indicator_Best_seller.dart';
 import 'package:book_app/core/widgets/show_snack_bar.dart';
@@ -11,9 +12,9 @@ class SearchListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BsetSellerBooksCubitCubit, BsetSellerBooksCubitState>(
+    return BlocBuilder<SearchCubitCubit, SearchCubitState>(
       builder: (context, state) {
-        if (state is BsetSellerBooksCubitSuccess) {
+        if (state is SearchCubitSucess) {
           return ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               padding: EdgeInsets.zero,
@@ -21,12 +22,10 @@ class SearchListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
-                  // child: BestSellerViewItem(
-
-                  // ),
+                  child: BestSellerViewItem(bookModel: state.Books[index]),
                 );
               });
-        } else if (state is BsetSellerBooksCubitFailure) {
+        } else if (state is SearchCubitFailure) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             showSnackBar(context, state.errMessage, Colors.red);
           });

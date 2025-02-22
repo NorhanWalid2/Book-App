@@ -8,8 +8,8 @@ import 'package:book_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsScreenBody extends StatelessWidget {
-  const BookDetailsScreenBody({super.key});
-   
+  const BookDetailsScreenBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -25,22 +25,23 @@ class BookDetailsScreenBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.23),
                   child: CustomBookItem(
-                    imageUrl: 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg',
+                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
                   ),
                 ),
                 const SizedBox(
                   height: 43,
                 ),
                 Text(
-                  'Norhan',
+                  bookModel.volumeInfo.title!,
                   style: Styles.textstyle30.copyWith(
                       fontWeight: FontWeight.bold, color: Color(0xff493628)),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(
                   height: 6,
                 ),
                 Text(
-                  'Norhan',
+                  bookModel.volumeInfo.authors![0],
                   style: Styles.textstyle18.copyWith(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w500,
@@ -49,10 +50,11 @@ class BookDetailsScreenBody extends StatelessWidget {
                 const SizedBox(
                   height: 18,
                 ),
+                BookRating(count: bookModel.volumeInfo.pageCount!),
                 const SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
-                BookActions(),
+                BookActions(bookModel: bookModel,),
                 const SizedBox(
                   height: 40,
                 ),
@@ -67,7 +69,9 @@ class BookDetailsScreenBody extends StatelessWidget {
                 const SizedBox(
                   height: 3,
                 ),
-                SimilarBookListView(),
+                SimilarBookListView(
+                  bookModel: bookModel,
+                ),
                 const SizedBox(
                   height: 30,
                 ),
